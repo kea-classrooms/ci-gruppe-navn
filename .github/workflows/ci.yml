@@ -22,5 +22,5 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Print commit SHA1
-        run: echo ${{ GITHUB_SHA }}
+        run: echo ${{ github.sha }}
     

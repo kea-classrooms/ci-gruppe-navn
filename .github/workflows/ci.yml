@@ -1,0 +1,26 @@
+name: On push echo
+
+on:
+  push:
+    branches: 
+      - 'master'
+      
+env: 
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  
+permissions:
+  checks: write
+  actions: write
+  contents: read
+  issues: write
+  
+jobs:
+  mainline:
+    name: "Mainline"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+      - uses: actions/checkout@v2
+      - name: Print commit SHA1
+      - run: echo ${{ GITHUB_SHA }}
+    

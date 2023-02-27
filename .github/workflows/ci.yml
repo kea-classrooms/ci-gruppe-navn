@@ -22,6 +22,4 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Print commit SHA1
-        run: echo ${{ github.sha }} | cut -c -7
-        run: echo "SHA1 hash "+ ${{ github.sha_short }}
-    
+        run: echo "SHA1 hash " + ${{ github.sha }} | cut -c -7    
